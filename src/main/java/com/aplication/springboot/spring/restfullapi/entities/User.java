@@ -21,6 +21,9 @@ public class User {
 
     private String password;
 
+    @Transient
+    private boolean isAdmin;
+
     @ManyToMany
     @JoinTable(
             name="user_role",
