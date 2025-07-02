@@ -1,5 +1,6 @@
 package com.aplication.springboot.spring.restfullapi.entities;
 
+import com.aplication.springboot.spring.restfullapi.validations.ExistsByUsername;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -21,6 +22,7 @@ public class User {
     private Long id;
 
     @Column(unique = true)
+    @ExistsByUsername
     @NotBlank
     @Size(min = 4, max = 45)
     private String username;
